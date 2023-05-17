@@ -9,15 +9,15 @@
     <!-- Content Row -->
         <div class="card">
             <div class="card-header py-3 d-flex">
-                <h6 class="m-0 font-weight-bold text-primary">
-                    {{ __('room') }}
+                <h6 class="m-2 font-weight-bold text-primary">
+                    {{ __('Otaqlar') }}
                 </h6>
                 <div class="ml-auto">
                     <a href="{{ route('admin.rooms.create') }}" class="btn btn-primary">
                         <span class="icon text-white-50">
                             <i class="fa fa-plus"></i>
                         </span>
-                        <span class="text">{{ __('New room') }}</span>
+                        <span class="text">{{ __('Əlavə et') }}</span>
                     </a>
                 </div>
             </div>
@@ -30,8 +30,8 @@
 
                                 </th>
                                 <th width="20">No</th>
-                                <th>Room Number</th>
-                                <th>Action</th>
+                                <th>Otaq nömrəsi</th>
+                                <th>Əməliyyat</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -49,7 +49,7 @@
                                     <a href="{{ route('admin.rooms.edit', $room->id) }}" class="btn btn-info">
                                         <i class="fa fa-pencil-alt"></i>
                                     </a>
-                                    <form onclick="return confirm('are you sure ? ')" class="d-inline" action="{{ route('admin.rooms.destroy', $room->id) }}" method="POST">
+                                    <form onclick="return confirm('Əminsiniz?')" class="d-inline" action="{{ route('admin.rooms.destroy', $room->id) }}" method="POST">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-danger">
@@ -60,7 +60,7 @@
                             </tr>
                             @empty
                             <tr>
-                                <td colspan="9" class="text-center">{{ __('Data Empty') }}</td>
+                                <td colspan="9" class="text-center">{{ __('İnformasiya yoxdur') }}</td>
                             </tr>
                             @endforelse
                         </tbody>
@@ -77,7 +77,7 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-  let deleteButtonTrans = 'delete selected'
+  let deleteButtonTrans = 'Seçilmişləri sil'
   let deleteButton = {
     text: deleteButtonTrans,
     url: "{{ route('admin.rooms.mass_destroy') }}",
@@ -87,10 +87,10 @@
           return $(entry).data('entry-id')
       });
       if (ids.length === 0) {
-        alert('zero selected')
+        alert('Otaq seçilməyib')
         return
       }
-      if (confirm('are you sure ?')) {
+      if (confirm('Əminsiniz?')) {
         $.ajax({
           headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
           method: 'POST',

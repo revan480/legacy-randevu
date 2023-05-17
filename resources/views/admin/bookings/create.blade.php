@@ -16,10 +16,10 @@
 <!-- Content Row -->
         <div class="card shadow">
             <div class="card-header py-3 d-flex">
-            <h1 class="h3 mb-0 text-gray-800">{{ __('Rezervasiya Yarad') }}</h1>
+            <h1 class="h3 mb-0 text-gray-800">{{ __('Rezervasiya Yarat') }}</h1>
                 <div class="ml-auto">
                     <a href="{{ route('admin.bookings.index') }}" class="btn btn-primary">
-                        <span class="text">{{ __('Go Back') }}</span>
+                        <span class="text">{{ __('Geriyə Qayıt') }}</span>
                     </a>
                 </div>
             </div>
@@ -83,7 +83,7 @@
                                 <option value="2">Concelled</option>
                         </select>
                     </div> --}}
-                    <button type="submit" class="btn btn-primary btn-block">{{ __('Save') }}</button>
+                    <button type="submit" class="btn btn-primary btn-block">{{ __('Yadda Saxla') }}</button>
                 </form>
             </div>
         </div>

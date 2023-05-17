@@ -19,7 +19,7 @@
             <h1 class="h3 mb-0 text-gray-800">{{ __('Rezervasiyanın redaktəsi') }}</h1>
                 <div class="ml-auto">
                     <a href="{{ route('admin.bookings.index') }}" class="btn btn-primary">
-                        <span class="text">{{ __('Geriyə qayıd') }}</span>
+                        <span class="text">{{ __('Geriyə qayıt') }}</span>
                     </a>
                 </div>
             </div>
@@ -83,7 +83,7 @@
                                 <option value="2" {{ $booking->status == 2 ? 'selected' : null }} >Concelled</option>
                         </select>
                     </div> --}}
-                    <button type="submit" class="btn btn-primary btn-block">{{ __('Save') }}</button>
+                    <button type="submit" class="btn btn-primary btn-block">{{ __('Yadda Saxla') }}</button>
                 </form>
             </div>
         </div>

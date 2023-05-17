@@ -28,9 +28,9 @@
                     @csrf
                     <div class="form-group">
                         <label for="name">{{ __('Ad') }}</label>
-                        <input type="text" class="form-control" id="name" placeholder="{{ __('name') }}" name="name" value="{{ old('name') }}" />
+                        <input type="text" class="form-control" id="name" placeholder="{{ __('İşçi adını yazın') }}" name="name" value="{{ old('name') }}" />
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">{{ __('Save') }}</button>
+                    <button type="submit" class="btn btn-primary btn-block">{{ __('Yadda Saxla') }}</button>
                 </form>
             </div>
         </div>

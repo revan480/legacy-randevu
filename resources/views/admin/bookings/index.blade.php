@@ -30,14 +30,14 @@
 
                                 </th>
                                 <th>No</th>
-                                <th>Xəstə adi</th>
-                                <th>Xəstə soyadi</th>
+                                <th>Xəstə adı</th>
+                                <th>Xəstə soyadı</th>
                                 <th>Mütəxəssis</th>
                                 <th>Otaq</th>
                                 <th>Başlama tarixi</th>
                                 <th>Bitmə tarixi</th>
                                 <th>Qeyd</th>
-                                <th>Action</th>
+                                <th>Əməliyyat</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -72,7 +72,7 @@
                             </tr>
                             @empty
                             <tr>
-                                <td colspan="9" class="text-center">{{ __('Data Empty') }}</td>
+                                <td colspan="9" class="text-center">{{ __('İnformasiya yoxdur') }}</td>
                             </tr>
                             @endforelse
                         </tbody>
@@ -89,7 +89,7 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-  let deleteButtonTrans = 'seçilənləri sil'
+  let deleteButtonTrans = 'Seçilmişləri sil'
   let deleteButton = {
     text: deleteButtonTrans,
     url: "{{ route('admin.bookings.mass_destroy') }}",
@@ -99,10 +99,10 @@
           return $(entry).data('entry-id')
       });
       if (ids.length === 0) {
-        alert('zero selected')
+        alert('Rezervasiya seçilməyib')
         return
       }
-      if (confirm('are you sure ?')) {
+      if (confirm('Əminsiniz?')) {
         $.ajax({
           headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
           method: 'POST',

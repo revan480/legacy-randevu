@@ -54,7 +54,7 @@
                         <label for="address">{{ __('Address') }}</label>
                         <textarea class="form-control" name="address" id="address" placeholder="address" cols="30" rows="10">{{ old('address') }}</textarea>
                     </div> --}}
-                    <button type="submit" class="btn btn-primary btn-block">{{ __('Save') }}</button>
+                    <button type="submit" class="btn btn-primary btn-block">{{ __('Yadda Saxla') }}</button>
                 </form>
             </div>
         </div>

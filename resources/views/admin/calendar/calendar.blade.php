@@ -4,7 +4,7 @@
 <div class="container">
     <div class="card">
         <div class="card-header">
-            Calendar
+            Kalendar
         </div>
 
         <div class="card-body">
@@ -35,7 +35,7 @@
                     </div>
                     <div class="col-md-2">
                         <button class="btn btn-primary mt-4">
-                            Filter
+                            Axtar
                         </button>
                     </div>
                 </div>

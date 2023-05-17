@@ -87,7 +87,7 @@ class FindRoomController extends Controller
                         ->where('name', '=', $doctor)
                         ->get();
             }
-            
+
 
 
         } else {

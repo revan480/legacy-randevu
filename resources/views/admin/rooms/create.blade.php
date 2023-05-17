@@ -16,10 +16,10 @@
 <!-- Content Row -->
         <div class="card shadow">
             <div class="card-header py-3 d-flex">
-            <h1 class="h3 mb-0 text-gray-800">{{ __('create room') }}</h1>
+            <h1 class="h3 mb-0 text-gray-800">{{ __('Otaq əlavə et') }}</h1>
                 <div class="ml-auto">
                     <a href="{{ route('admin.rooms.index') }}" class="btn btn-primary">
-                        <span class="text">{{ __('Go Back') }}</span>
+                        <span class="text">{{ __('Geriyə Qayıt') }}</span>
                     </a>
                 </div>
             </div>
@@ -27,8 +27,8 @@
                 <form action="{{ route('admin.rooms.store') }}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label for="room_number">{{ __('Room Number') }}</label>
-                        <input type="text" class="form-control" id="room_number" placeholder="{{ __('room number') }}" name="room_number" value="{{ old('room_number') }}" />
+                        <label for="room_number">{{ __('Otaq nömrəsi') }}</label>
+                        <input type="text" class="form-control" id="room_number" placeholder="{{ __('Otaq nömrəsi yazın') }}" name="room_number" value="{{ old('room_number') }}" />
                     </div>
                     {{-- <div class="form-group">
                         <label for="price">{{ __('Price') }}</label>
@@ -54,7 +54,7 @@
                         <label for="description">{{ __('Description') }}</label>
                         <textarea class="form-control" name="description" id="descriptioin" placeholder="description" cols="30" rows="10">{{ old('description') }}</textarea>
                     </div> --}}
-                    <button type="submit" class="btn btn-primary btn-block">{{ __('Save') }}</button>
+                    <button type="submit" class="btn btn-primary btn-block">{{ __('Yadda Saxla') }}</button>
                 </form>
             </div>
         </div>

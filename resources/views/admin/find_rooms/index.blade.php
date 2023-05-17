@@ -24,7 +24,7 @@
                                 @endif
                             </div>
                             <div class="form-group">
-                                <label for="time_to">{{ __('Bitmə vaxtı') }}</label>
+                                <label for="time_to">{{ __('Bitmə tarixi') }}</label>
                                 <input type="text" class="form-control datetime" id="time_to" name="time_to" value="{{ old('time_to') }}" />
                                 <p class="help-block"></p>
                                 @if($errors->has('time_to'))
@@ -81,14 +81,14 @@
 
                                 </th>
                                 <th>No</th>
-                                <th>Xəstə adi</th>
-                                <th>Xəstə soyadi</th>
+                                <th>Xəstə adı</th>
+                                <th>Xəstə soyadı  </th>
                                 <th>Mütəxəssis</th>
                                 <th>Otaq</th>
                                 <th>Başlama tarixi</th>
                                 <th>Bitmə tarixi</th>
                                 <th>Qeyd</th>
-                                <th>Action</th>
+                                <th>Əməliyyat</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -112,7 +112,7 @@
                                     <a href="{{ route('admin.bookings.edit', $booking->id) }}" class="btn btn-info">
                                         <i class="fa fa-pencil-alt"></i>
                                     </a>
-                                    <form onclick="return confirm('are you sure ? ')" class="d-inline" action="{{ route('admin.bookings.destroy', $booking->id) }}" method="POST">
+                                    <form onclick="return confirm('Əminsiniz?')" class="d-inline" action="{{ route('admin.bookings.destroy', $booking->id) }}" method="POST">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-danger">
@@ -123,7 +123,7 @@
                             </tr>
                             @empty
                             <tr>
-                                <td colspan="7" class="text-center">{{ __('Data Empty') }}</td>
+                                <td colspan="7" class="text-center">{{ __('İnformasiya yoxdur') }}</td>
                             </tr>
                             @endforelse
                         </tbody>
@@ -148,7 +148,7 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-  let deleteButtonTrans = 'delete selected'
+  let deleteButtonTrans = 'Seçilmişləri sil'
   let deleteButton = {
     text: deleteButtonTrans,
     url: "{{ route('admin.rooms.mass_destroy') }}",
@@ -158,10 +158,10 @@
           return $(entry).data('entry-id')
       });
       if (ids.length === 0) {
-        alert('zero selected')
+        alert('Otaq seçilməyib')
         return
       }
-      if (confirm('are you sure ?')) {
+      if (confirm('Əminsiniz?')) {
         $.ajax({
           headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
           method: 'POST',

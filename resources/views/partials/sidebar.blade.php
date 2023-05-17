@@ -46,7 +46,7 @@
             <li class="nav-item {{ request()->is('admin/doctors') || request()->is('admin/doctors/*') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('admin.doctors.index') }}">
                     <i class="fas fa-user-md"></i>
-                    <span>{{ __('Doctors') }}</span>
+                    <span>{{ __('İşçilər') }}</span>
                 </a>
             </li>
 
